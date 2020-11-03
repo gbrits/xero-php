@@ -541,6 +541,15 @@ class Contact extends Remote\Model
     {
         return $this->_data['ContactPersons'];
     }
+    
+    /**
+     * @return ContactPerson[]|Remote\Collection
+     */
+    public function clearContactPersons()
+    {
+        $this->_data['ContactPersons'] = new Remote\Collection();
+        return $this;
+    }
 
     /**
      * @param ContactPerson $value
